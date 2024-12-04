@@ -1,0 +1,41 @@
+
+import static org.junit.Assert.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * This class represents GFA test cases for a TwoDimRaggedArrayUtility object.
+ * 
+ * @author Farnaz Eivazi
+ * @version 7/13/2022
+ * 
+ */
+public class TwoDimRaggedArrayUtilityGFATest {
+	private double[][] dataSet1 = {{1,2,3},{4,5},{6,7,8,9}};
+	File file;
+	
+	@Before
+	public void setUp() throws Exception {
+		file = new File("blank.txt");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		file = null;
+	}
+
+	/**
+	 * Test getRowTotal method
+	 * Returns the total of all the elements of row 1.
+	 * Row 0 refers to the first row in the two dimensional array
+	 */
+	@Test
+	public void testGetRowTotal() {
+		assertEquals(9.0,TwoDimRaggedArrayUtility.getRowTotal(dataSet1,1),.001);
+	}
+}
